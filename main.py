@@ -7,13 +7,13 @@ engine.setProperty("voice", voice_id)
 def speak(text):
     engine.say(text);print(text)
     engine.runAndWait()
-try:
-    while True:
+while True:
+    try:
         engine.say("Enter the command sir : ");engine.runAndWait();query = input("Enter the command sir : ")
         if query == "stop":
             break
         else:
             result = w.summary(query, sentences=2)
             speak(result)
-except:
-      speak("Result not found. May be the spelling mistake or unwanted spaces in the command")
+    except:
+        speak("Result not found. May be the spelling mistake or unwanted spaces in the command")
